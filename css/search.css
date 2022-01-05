@@ -1,18 +1,100 @@
-/* 画像start */
+@charset "UTF-8";
+  
+/* ********************************************
+// --- リセット ---
+// ※ブラウザのデフォルトCSSをリセット
+// ***************************************** */
+  
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 16px;
+}
+body {
+  font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+header, footer, nav, menu, article, aside, section, details, figcaption, figure{
+  display: block;
+}
+ul, ol {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+}
+img {
+  vertical-align: bottom;
+}
+a img {
+  border: none;
+}
+strong {
+  font-weight: normal;
+}
+i{
+  font-style: normal;
+}
+
+.scrollbarnone{
+  height: 150px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+}
+.scrollbarnone::-webkit-scrollbar{ /* Chrome, Safari 対応 */
+  display:none;
+}
+
+
+/* ---------------- fontの読み込み ----------------- */
+@font-face {
+  font-family: 'Kaushan Script';
+  src: url(https://themes.googleusercontent.com/static/fonts/kaushanscript/v1/qx1LSqts-NtiKcLw4N03IFhlQWQpSCpzb2Peu3I-Q34.woff);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
+/* ---------------- 表示の設定 ----------------- */
+
+div.container{
+  height: 10em;
+  position: relative;
+}
+
+div.container h1{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-right: -30%;
+  transform: translate(-50%, -50%);
+}
+
+div.container2{
+  position: relative;
+  top: 125px;
+  text-align: center;
+  
+  font-size: 50px;
+}
+
+/* ---------------- 画像の設定 ----------------- */
 /* みずどりの基本設定 */
-.layer-img{
+.car_img{
+  position: absolute;
   width: 250px;
-  height: auto;
   transform: rotate(-45deg);
+  top: 0;
+  left: 35%;
+  margin-right: -30%;
   /*透過の設定*/
   opacity: 0.5;
 }
 
-/* 画像 fin */
-
-/* 波紋 */
-
-@charset "utf-8";
+/* ---------------- 波形の設定 ----------------- */
 
 /*== 無限に波紋が広がる */
 
@@ -85,77 +167,16 @@
     border-left-color: #fff;
 }
 
-/*========= レイアウトのためのCSS ===============*/
-
-.overflow-hidden {
-    overflow: hidden;
-}
-
-
-/* ボタン */
-.btnlinestretches2{
-    /*線の基点とするためrelativeを指定*/
-  position:relative;
-    /*ボタンの形状*/  
-  color:#333;
-    padding: 10px 30px;
-  
-  display:inline-block;
-    text-decoration: none;
-    outline: none;
-}
-
-/*線の設定*/
-.btnlinestretches2::before,
-.btnlinestretches2::after {
-  content:'';
-    /*絶対配置で線の位置を決める*/
-  position:absolute;
-    /*事前に出現させる線の形状*/
-  border:solid #333;
-  width:10px;
-  height:10px;
-    /*アニメーションの指定*/
-  transition:all 0.3s ease-in-out;
-}
-
-.btnlinestretches2::before{
-    /*事前に出現させる線の位置*/
-  top:0;
-  left:0;
-    /*事前に出現させる線の形状*/
-  border-width:2px 0 0 2px;
-}
-
-.btnlinestretches2::after{
-    /*事前に出現させる線の位置*/
-  bottom:0;
-  right:0;
-    /*事前に出現させる線の形状*/
-  border-width:0 2px 2px 0;
-}
-
-/*hoverした際の線の形状*/
-.btnlinestretches2:hover::before,
-.btnlinestretches2:hover::after{
-  width:calc(100% - 2px);
-  height:calc(100% - 2px);
-  border-color:#666
-}
-
-/*========= レイアウトのためのCSS ===============*/
-body{
-    vertical-align:middle; 
-    padding: 100px 0;
-    text-align: center;
-}
-
-p{
-    margin: 0 0 10px 0;
-}
 
 @media screen and (max-width:480px) {
      
-    /*　画面サイズが480px以下の場合ここの記述が適用される　*/
- 
+  div.container h1{
+    color:blueviolet;  
+    font-family:'Kaushan Script';
+    font-size: 50px;
+  }
+  .car_img{
+    left: 17%;
+  }
+
 }
